@@ -9,6 +9,7 @@ const profilePicture = 'images/Jonathas.png';
 
 /* Step 3 - Element Variables */
 
+const nameElement = document.getElementById('name');
 const foodElement = document.querySelector('#food');
 const yearElement = document.querySelector('#year');
 const imageElement = document.querySelector('img');
@@ -16,6 +17,7 @@ const imageElement = document.querySelector('img');
 
 /* Step 4 - Adding Content */
 
+nameElement.innerHTML = `<strong>${fullName}</strong>`;
 yearElement.textContent = currentYear;
 imageElement.setAttribute('src', profilePicture);
 imageElement.setAttribute('alt', `This is ${fullName}. He is student at BYU-Idaho.`);
@@ -26,4 +28,10 @@ let favFoods = ['Pizza', 'Sushi', 'Chocolate', 'Ice Cream', 'Pasta', 'Steak'];
 foodElement.innerHTML = favFoods;
 let newfood = 'Chicken';
 favFoods.push(newfood); 
+foodElement.innerHTML += `<br>${favFoods}`;
+
+favFoods.shift();
+foodElement.innerHTML += `<br>${favFoods}`;
+
+favFoods.pop();
 foodElement.innerHTML += `<br>${favFoods}`;
